@@ -45,15 +45,15 @@ html(lang="ru", class="no-js", prefix="og:http://ogp.me/ns#")
 		+addCSS([
 			{
 				media: "screen",
-				href: "../css/sprite.css",
-				noCache: true,
-			}, {
-				media: "screen",
-				href: "../css/unocompany.css",
+				href: "../css/plugins/slick.css",
 				noCache: true
 			}, {
 				media: "screen",
 				href: "../css/" + info.code + ".css",
+				noCache: true
+			}, {
+				media: "screen",
+				href: "../css/" + info.code + ".responsive.css",
 				noCache: true
 			}
 		])
@@ -62,8 +62,7 @@ html(lang="ru", class="no-js", prefix="og:http://ogp.me/ns#")
 
 		div(class="page")
 			header(class="page-header", itemscope, itemtype="http://schema.org/WPHeader")
-
-
+				
 			main(class="page-content")
 				block content
 
@@ -72,7 +71,9 @@ html(lang="ru", class="no-js", prefix="og:http://ogp.me/ns#")
 
 		+addJS([
 			{
-				src: "http://code.jquery.com/jquery-1.11.3.min.js"
+				src: "../js/jquery-3.2.1.min.js"
+			}, {
+				src: "../js/plugins/slick.min.js"
 			}, {
 				src: "../js/" + info.code + ".js"
 			}
