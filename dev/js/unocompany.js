@@ -17,9 +17,10 @@
 						arrows: false,
 						infinite: true,
 						autoplay: true,
-						autoplaySpeed: "5000",
-						speed: 700,
+						autoplaySpeed: "1500",
+						speed: 1000,
 						slidesToShow: 1,
+						cssEase: "cubic-bezier(0.250, 0.460, 0.450, 0.940)",
 					});
 
 					$itemSlider.on("mousedown", function() {
@@ -31,12 +32,23 @@
 						item = $(this);
 						item.css("cursor", "pointer");
 					})
+				},
+
+				preloader: function() {
+					$sel.window.on("load", function() {
+
+						setTimeout(function() {
+							$(".animate").removeClass("hide");
+						}, 500);
+
+					});
 				}
 			}
 		};
 
 	})();
 
+	UNOCOMPANY.page.preloader();
 	UNOCOMPANY.page.slider();
 
 })(jQuery);
